@@ -1,0 +1,17 @@
+.header__nav-link {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity .2s linear;
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    gap: 5px;
+}
+
+.header__nav-link:hover {
+    opacity: 0.5;
+}
