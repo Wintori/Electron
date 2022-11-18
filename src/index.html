@@ -2,11 +2,51 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>Быстрые отчёты</title>
+    <link rel="stylesheet" href="pages/index.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+  <div class="page">
+    <header class="header">
+      <div class="header__logo-container">
+        <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+        <h1 class="header__title">Быстрые<br>отчёты</h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li>
+            <a class="header__nav-link"  href="#">
+            <img src="images/doc-icon.svg" alt="Документы" class="header__nav-icon">
+            <p class="header__nav-text">Документы</p>
+            </a>
+          </li>
+          <li>
+            <a class="header__nav-link" href="#">
+            <img src="images/data-icon.svg" alt="Источники данных" class="header__nav-icon">
+            <p class="header__nav-text">Источники данных</p>
+            </a>
+          </li>
+          <li>
+            <a class="header__nav-link" href="#">
+              <img class="header__nav-icon" src="images/group-icon.svg" alt="Группы" >
+              <p class="header__nav-text">Группы</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <img class="header__account" src="images/account.svg" alt="Аккаунт">
+    </header>
+
+    <main class="content">
+      <h1>💖 Hello World!</h1>
+      <p>Welcome to your Electron application.</p>
+    </main>
+
+    <footer class="footer">
+
+
+
+    </footer>
+  </div>
   </body>
 </html>
