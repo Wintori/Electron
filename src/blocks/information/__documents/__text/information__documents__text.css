@@ -1,0 +1,9 @@
+.information__data-source__text{
+    background-color: #DD4433;
+}
+.information__data-source__text:nth-child(2) {
+    margin: 0 0 0 auto;
+}
+.information__data-source__text:nth-child(n + 4) {
+    margin: 0 0 0 20%;
+}
