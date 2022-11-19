@@ -1,0 +1,6 @@
+.information {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    width: 100%;
+}
