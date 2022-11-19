@@ -30,6 +30,7 @@
 @import url(../blocks/information/__documents/__img/information__documents__img.css);
 @import url(../blocks/information/__documents/__name/information__documents__name.css);
 @import url(../blocks/information/__documents/__size/information__documents__size.css);
+@import url(../blocks/information/__documents/__text/information__documents__text.css);
 @import url(../blocks/information/__sort-menu/information__sort-menu.css);
 @import url(../blocks/information/__sort-menu/__item/information__sort-menu__item.css);
 @import url(../blocks/information/__sort-menu/__item/_size/information__sort-menu__item_size.css);
