@@ -11,6 +11,7 @@
 @import url(../blocks/header/__nav-icon/header__nav-icon.css);
 @import url(../blocks/header/__nav-icon/_active/header__nav-icon_active.css);
 @import url(../blocks/header/__nav-text/header__nav-text.css);
+@import url(../blocks/header/__nav-text/_active/header__nav-text_active.css);
 @import url(../blocks/header/__account/header__account.css);
 @import url(../blocks/content/content.css);
 @import url(../blocks/aside-menu/aside__menu.css);
