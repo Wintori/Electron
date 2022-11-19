@@ -1,0 +1,9 @@
+.information__sort-menu {
+    margin: 0 10px 0;
+    padding: 0;
+    height: 56px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
