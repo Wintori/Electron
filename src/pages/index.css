@@ -29,4 +29,12 @@
 @import url(../blocks/information/__sort-menu/__item/_size/information__sort-menu__item_size.css);
 @import url(../blocks/information/__text/information__text.css);
 @import url(../blocks/information/__icon/information__icon.css);
+@import url(../blocks/information/__data-source/information__data-source.css);
+@import url(../blocks/information/__data-source/__item/information__data-source__item.css);
+@import url(../blocks/information/__data-source/__item-img/information__data-source__item-img.css);
+@import url(../blocks/information/__data-source/__item-name/information__data-source__item-name.css);
+@import url(../blocks/information/__data-source/__item-type/information__data-source__item-type.css);
+@import url(../blocks/information/__data-source/__item-change/information__data-source__item-change.css);
+@import url(../blocks/information/__data-source/__item-status/information__data-source__item-status.css);
+@import url(../blocks/information/__data-source/__text/information__data-source__text.css);
 @import url(../blocks/footer/footer.css);
