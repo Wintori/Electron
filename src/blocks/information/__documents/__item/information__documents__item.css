@@ -4,11 +4,3 @@
     width: 100%;
     justify-content: space-between;
 }
-
-.information__documents__item:nth-child(2){
-    margin: 0 0 0 auto;
-    background-color: #DD4433;
-}
-.information__documents__item:nth-child(3){
-    margin: 0 0 0 20%;
-}
