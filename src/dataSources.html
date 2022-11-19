@@ -48,24 +48,34 @@
             </svg>
           </li>
           <li class="information__sort-menu__item">
-            <div class="information__sort-menu__item information__sort-menu__item_size">
-              <p class="information__text">Размер</p>
+              <p class="information__text">Тип</p>
               <svg viewBox="0 0 10 10" class="information__icon">
                 <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
                 <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
                 <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
               </svg>
-            </div>
+          </li>
 
-            <div class="information__sort-menu__item information__sort-menu__item_last-change">
+          <li class="information__sort-menu__item">
             <p class="information__text">Последнее изменение</p>
               <svg viewBox="0 0 10 10" class="information__icon">
                 <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
                 <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
                 <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
               </svg>
-            </div>
           </li>
+
+          <li class="information__sort-menu__item">
+              <p class="information__text">Статус</p>
+              <svg viewBox="0 0 10 10" class="information__icon">
+                <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              </svg>
+          </li>
+
+        </ul>
+        <ul class="information__data-source">
         </ul>
       </section>
     </main>
@@ -76,5 +86,20 @@
 
     </footer>
   </div>
+
+  <template class="data-template">
+    <li class="information__data-source__item">
+      <img src="" alt="" class="information__data-source__item-img">
+      <p class="information__data-source__text information__data-source__item-name">
+      </p>
+      <p class="information__data-source__text information__data-source__item-type">
+      </p>
+      <p class="information__data-source__text information__data-source__item-change">
+      </p>
+      <p class="information__data-source__text information__data-source__item-status">
+      </p>
+    </li>
+  </template>
+  <script src="dataSources.js"></script>
   </body>
 </html>
