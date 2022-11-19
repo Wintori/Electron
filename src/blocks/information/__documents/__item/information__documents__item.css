@@ -1,0 +1,6 @@
+.information__documents__item{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
