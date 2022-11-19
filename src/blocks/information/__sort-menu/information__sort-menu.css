@@ -2,6 +2,7 @@
     margin: 0 10px 0;
     padding: 0;
     height: 56px;
+    width: 100%;
     list-style: none;
     display: flex;
     justify-content: space-between;
