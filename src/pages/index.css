@@ -12,4 +12,16 @@
 @import url(../blocks/header/__nav-text/header__nav-text.css);
 @import url(../blocks/header/__account/header__account.css);
 @import url(../blocks/content/content.css);
+@import url(../blocks/aside-menu/aside__menu.css);
+@import url(../blocks/aside-menu/__img/aside-menu__img.css);
+@import url(../blocks/aside-menu/__img/_active/aside-menu__img_active.css);
+@import url(../blocks/aside-menu/__item/aside-menu__item.css);
+@import url(../blocks/aside-menu/__item/_active/aside-menu__item_active.css);
+@import url(../blocks/aside-menu/__list/aside-menu__list.css);
+@import url(../blocks/aside-menu/__text/aside-menu__text.css);
+@import url(../blocks/aside-menu/__text/_active/aside-menu__text_active.css);
+@import url(../blocks/information/information.css);
+@import url(../blocks/information/__documents/information__documents.css);
+@import url(../blocks/information/__documents/__item/information__documents__item.css);
+@import url(../blocks/information/__documents/__list/information__documents__list.css);
 @import url(../blocks/footer/footer.css);
