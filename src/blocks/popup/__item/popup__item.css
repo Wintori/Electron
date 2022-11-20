@@ -8,13 +8,13 @@
 }
 .popup__item:nth-child(1){
     position: absolute;
-    bottom: 96px;
+    bottom: 75px;
 }
 .popup__item:nth-child(2){
     position: absolute;
-    bottom: 192px;
+    bottom: 150px;
 }
 .popup__item:nth-child(3){
     position: absolute;
-    bottom: 288px;
+    bottom: 225px;
 }
