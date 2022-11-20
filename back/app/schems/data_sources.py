@@ -16,7 +16,6 @@ class DataSourcesStatus(str, Enum):
 class DataSourcesResponse(BaseModel):
     id: int
     name: str
-    type: str
     status: DataSourcesStatus
     date: datetime
 
@@ -26,18 +25,16 @@ class DataSourcesResponse(BaseModel):
 
 class CreateDataSourcesRequest(BaseModel):
     name: str
-    type: str
     status: DataSourcesStatus
 
     class Config:
         orm_mode = True
 
 
-# class UpdateDataSourcesRequest(BaseModel):
-#     name: str | None
-#     type: str | None
-#     status: DataSourcesStatus | None
-#     date: datetime | None
-#
-#     class Config:
-#         orm_mode = True
+class UpdateDataSourcesRequest(BaseModel):
+    name: str | None
+    status: DataSourcesStatus | None
+    date: datetime | None
+
+    class Config:
+        orm_mode = True

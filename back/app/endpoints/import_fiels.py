@@ -5,6 +5,7 @@ from dateutil import parser
 from fastapi import APIRouter, status, Request, HTTPException, File, UploadFile
 from sqlalchemy import insert as sa_insert, literal_column, delete as sa_delete, select, update as sa_update
 from sqlalchemy.orm import joinedload
+from starlette.responses import FileResponse
 
 from back.app.logic.create_file import create_folder_os, delete_folder_os, check_file_in_folder, save_file_to_uploads, \
     get_file_size
@@ -66,7 +67,7 @@ async def create_folder(
 @router.post(
     "/create_file",
     status_code=status.HTTP_201_CREATED,
-    response_model=ItemData,
+    # response_model=ItemData,
 )
 async def create_file(
         request: Request,
@@ -222,7 +223,7 @@ async def delete_by_url(
 @router.get(
     '/get_by_tag',
     status_code=status.HTTP_200_OK,
-    response_model=ItemTagResponseData,
+    # response_model=ItemTagResponseData,
 )
 async def get_files_by_tag(
         request: Request,
@@ -230,13 +231,13 @@ async def get_files_by_tag(
 ):
     async with request.app.state.db.get_session() as session:
         files = await select_all_items_id_by_tag(session, tag)
-        return {"items":files}
+        return {"items": files}
 
 
 @router.get(
     '/get_by_tag_and_path',
     status_code=status.HTTP_200_OK,
-    response_model=ItemTagResponseData,
+    # response_model=ItemTagResponseData,
 )
 async def get_files_by_tag(
         request: Request,
@@ -253,7 +254,7 @@ async def get_files_by_tag(
         files = (await session.execute(files_query)).scalars().all()
         # print(type(files))
         # print(ItemTagResponseData(files))
-        return {"items":files}
+        return {"items": files}
 
 
 @router.get(
@@ -284,6 +285,26 @@ async def get_files(
 
     return root
 
+
+@router.get("/api/download", status_code=status.HTTP_200_OK, response_class=FileResponse)
+async def download_file(
+        request: Request,
+        file_id: int,
+        media_type: str,
+        # db: Session = Depends(get_db)
+):
+    # todo сделатть преевод файлов в разные форматы
+    async with request.app.state.db.get_session() as session:
+        res = await get_or_404(session, Items, file_id)
+    file_resp = FileResponse(res.url,
+                             media_type=media_type,
+                             filename=res.name)
+    return file_resp
+    # response.status_code = status.HTTP_200_OK
+    # return file_resp
+    # else:
+    #     response.status_code = status.HTTP_404_NOT_FOUND
+    #     return {'msg': 'File not found'}
 # @router.get('/updates', response_model=ItemResponseData, status_code=200)
 # async def updates(date: str, request: Request):
 #     async with request.app.state.db.get_session() as session:
