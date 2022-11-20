@@ -68,8 +68,6 @@ asideItemsArray.forEach((asideElement) => {
     })
 })
 function removeAllCards () {
-
-    console.log(elementsList)
     document.querySelectorAll(".information__documents__item").forEach((element) => {
         element.remove()
     })
