@@ -1,0 +1,4 @@
+.popup__img_pressed{
+    transition: 1s;
+    rotate: 45deg;
+}
