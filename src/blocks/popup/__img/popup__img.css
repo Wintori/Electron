@@ -1,0 +1,9 @@
+.popup__img{
+    width: 100%;
+    overflow: hidden;
+}
+.popup__img:focus{
+    width: 100%;
+    display: none;
+    overflow: hidden;
+}

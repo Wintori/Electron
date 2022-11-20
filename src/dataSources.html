@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Быстрые отчёты</title>
+    <link rel="stylesheet" href="pages/index.css" />
+  </head>
+  <body>
+  <div class="page">
+    <header class="header">
+      <div class="header__logo-container">
+        <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+        <h1 class="header__title">Быстрые<br>отчёты</h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li>
+            <a class="header__nav-link"  href="./documents.html">
+            <img src="images/doc-icon.svg" alt="Документы" class="header__nav-icon">
+            <p class="header__nav-text">Документы</p>
+            </a>
+          </li>
+          <li>
+            <a class="header__nav-link" href="./dataSources.html">
+            <img src="images/data-icon_actiove.svg" alt="Источники данных" class="header__nav-icon">
+            <p class="header__nav-text header__nav-text_active">Источники данных</p>
+            </a>
+          </li>
+          <li>
+            <a class="header__nav-link" href="./users.html">
+              <img class="header__nav-icon" src="images/group-icon.svg" alt="Группы" >
+              <p class="header__nav-text">Группы</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <img class="header__account" src="images/account.svg" alt="Аккаунт">
+    </header>
+
+    <main class="content">
+      <section class="information">
+        <ul class="information__sort-menu">
+          <li class="information__sort-menu__item">
+            <p class="information__text">Название</p>
+            <svg viewBox="0 0 10 10" class="information__icon"><path d="m2.8027 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              <path d="m1.8008 3.9395a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1h-6.3984z"></path>
+              <path d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+            </svg>
+          </li>
+          <li class="information__sort-menu__item">
+              <p class="information__text">Тип</p>
+              <svg viewBox="0 0 10 10" class="information__icon">
+                <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              </svg>
+          </li>
+
+          <li class="information__sort-menu__item">
+            <p class="information__text">Последнее изменение</p>
+              <svg viewBox="0 0 10 10" class="information__icon">
+                <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              </svg>
+          </li>
+
+          <li class="information__sort-menu__item">
+              <p class="information__text">Статус</p>
+              <svg viewBox="0 0 10 10" class="information__icon">
+                <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              </svg>
+          </li>
+
+        </ul>
+        <ul class="information__data-source">
+        </ul>
+        <div class="popup" id="popup">
+          <img src="images/add.svg" class="popup__img" onclick="myFunction()">
+          <div id="myPopup" class="popup__content">
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Создать&nbsp;БД
+              </p>
+              <img src="images/api.svg">
+            </div>
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Удалить&nbsp;БД
+              </p>
+              <img src="images/api.svg">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+
+
+
+    </footer>
+  </div>
+
+  <template class="data-template">
+    <li class="information__data-source__item">
+      <svg viewBox="0 0 20 22.5" class="information__data-source__item-img">
+        <path d="m0 11.82v-5.57c0 0.66 1 1.27 2.93 1.74a31.09 31.09 0 0 0 7.07 0.72c5.51 0 10-1.1 10-2.46v5.54c0 1.36-4.48 2.46-10 2.46s-9.93-1.08-10-2.43z"></path>
+        <path d="m0 19.82v-5.57c0 0.66 1 1.27 2.93 1.74a31.15 31.15 0 0 0 7.07 0.72c5.51 0 10-1.1 10-2.46v5.54c0 1.36-4.48 2.46-10 2.46s-9.93-1.08-10-2.43z"></path>
+        <path d="m20 3.25a10 3 0 0 1-10 3 10 3 0 0 1-10-3 10 3 0 0 1 10-3 10 3 0 0 1 10 3z"></path>
+      </svg>
+      <p class="information__data-source__text information__data-source__item-name">
+      </p>
+      <p class="information__data-source__text information__data-source__item-type">
+      </p>
+      <p class="information__data-source__text information__data-source__item-change">
+      </p>
+      <p class="information__data-source__text information__data-source__item-status">
+      </p>
+    </li>
+  </template>
+  <script src="dataSources.js"></script>
+  <script src="./popups.js"></script>
+  </body>
+</html>

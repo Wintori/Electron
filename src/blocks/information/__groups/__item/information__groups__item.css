@@ -1,0 +1,5 @@
+.information__groups__item{
+    list-style-type: none;
+    display: flex;
+    align-items: end;
+}

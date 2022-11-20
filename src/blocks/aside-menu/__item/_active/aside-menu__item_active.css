@@ -1,0 +1,4 @@
+.aside-menu__item_active{
+    box-sizing: border-box;
+    border-radius: 30px 5% 5% 30px;
+}

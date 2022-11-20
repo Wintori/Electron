@@ -1,0 +1,8 @@
+.information__data-source__item-status {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: green;
+    padding: 4px;
+    margin: 0;
+}
