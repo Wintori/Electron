@@ -67,6 +67,7 @@ asideItemsArray.forEach((asideElement) => {
         setTabActiveHandler(asideElement)
     })
 })
+
 function removeAllCards () {
     document.querySelectorAll(".information__documents__item").forEach((element) => {
         element.remove()
