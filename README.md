@@ -37,4 +37,13 @@ npm start`
 ## Open API 3 :
 ```API_Doc.yaml```
 
-https://editor.swagger.io/
+---
+
+Вы можете посмотреть как работает наш API онлайн, поместив файл API_Doc.yaml на сайт [Swagger](https://editor.swagger.io/).
+
+---
+# Команда разработчиков
+
+Перевощиков Андрей / Backend разработчик
+Шашурин Егор / Frontend разработчик
+Плехов Андрей / Frontend разработчик
