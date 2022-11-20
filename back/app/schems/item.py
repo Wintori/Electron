@@ -11,74 +11,76 @@ class SystemItemType(str, Enum):
     FOLDER = "FOLDER"
 
 
-class InternalItemData(BaseModel):
-    id: str
-    url: str | None = None
-    date: datetime | None
-    parent_id: str | None
-    type: SystemItemType
-    size: int | None = 0
-
-    class Config:
-        orm_mode = True
+class SystemItemTag(str, Enum):
+    Document = "Document"
+    Template = "Template"
+    Report = "Report"
+    Export = "Export"
+    Other = "Other"
 
 
-class ItemData(BaseModel):
-    id: str
-    url: str | None = None
-    parent_id: str | None = None
-
-    type: SystemItemType
-    date: datetime | None
-    size: int | None = 0
-
-    @root_validator
-    def checker(cls, v):
-        if v.get('type').value == "FILE" and (v.get('size') <= 0 or len(v.get('url')) > 255):
-            raise HTTPException(400, detail="Validation Failed")
-        return v
+# class InternalItemData(BaseModel):
+#     id: str
+#     url: str | None = None
+#     date: datetime | None
+#     parent_id: str | None
+#     type: SystemItemType
+#     size: int | None = 0
+#
+#     class Config:
+#         orm_mode = True
 
 
-class FolderItemData(BaseModel):
-    id: int
-    # url: str | None = None
-    parent_id: int | None = None
-    name: str
-    type: SystemItemType = SystemItemType.FOLDER
-    # date: datetime | None
-    # size: int | None = 0
-
-    class Config:
-        orm_mode = True
-
-
-
-
-
-class ItemResponseData(InternalItemData):
-    children: List | None = []
-
-    @validator("children")
-    def replace_empty(cls, val):
-        return val or None
-
-    def get_child(self, index):
-        if len(self.children) > index:
-            return self.children[index]
-        return None
-
-
-class ItemRequestData(BaseModel):
-    items: List[ItemData]
-    updateDate: datetime
-
-    class Config:
-        orm_mode = True
-
-
-class Error(BaseModel):
-    code: int
-    message: str
-
-    class Config:
-        orm_mode = True
+# class ItemData(BaseModel):
+#     id: int
+#     date: datetime
+#     parent_id: int | None
+#     size: int
+#     url: str
+#     name: str
+#     tag: SystemItemTag
+#     type: SystemItemType
+#
+#     class Config:
+#         orm_mode = True
+#
+#
+# class FolderItemRequest(BaseModel):
+#     parent_id: int | None = None
+#     name: str
+#
+#     class Config:
+#         orm_mode = True
+#
+#
+# class FileItemRequest(BaseModel):
+#     id: int | None = None
+#     parent_id: int | None
+#
+#     class Config:
+#         orm_mode = True
+#
+#
+# class ItemTagResponseData(BaseModel):
+#     items: List[ItemData]
+#
+#
+# class ItemResponseData(ItemData):
+#     children: List | None = []
+#
+#     @validator("children")
+#     def replace_empty(cls, val):
+#         return val or None
+#
+#     def get_child(self, index):
+#         if len(self.children) > index:
+#             return self.children[index]
+#         return None
+#
+#
+# class Error(BaseModel):
+#     code: int
+#     message: str
+#
+#     class Config:
+#         orm_mode = True

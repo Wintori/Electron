@@ -29,9 +29,9 @@ class DatabaseAccessor:
     async def _set_engine(self) -> None:
         self._engine = create_async_engine(
             self._dsn,
-            # pool_pre_ping=True,
-            # pool_size=self._db_settings.db_pool_size,
-            # max_overflow=self._db_settings.db_max_overflow,
+            pool_pre_ping=True,
+            pool_size=self._db_settings.db_pool_size,
+            max_overflow=self._db_settings.db_max_overflow,
             # poolclass=NullPool,
             future=True,
             echo=True

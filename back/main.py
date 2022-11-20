@@ -4,6 +4,10 @@ from fastapi.responses import JSONResponse
 from starlette import status
 
 from back.app.endpoints.import_fiels import router as imp_router
+from back.app.endpoints.data_sources_crud import router as ds_router
+from back.app.endpoints.api_keys import router as api_keys_router
+from back.app.endpoints.group import router as group_router
+from back.app.endpoints.users import router as user_router
 from back.app.models.db import database_accessor, Base
 from config.settings import Settings
 
@@ -22,7 +26,7 @@ def bind_events(app: FastAPI, db_settings: dict) -> None:
     async def set_engine():
         db = database_accessor
         await db.run()
-        # await db.init_db(Base)
+        await db.init_db(Base)
         app.state.db = db
         app.tree = dict()
 
@@ -34,14 +38,17 @@ def bind_events(app: FastAPI, db_settings: dict) -> None:
 def get_app() -> FastAPI:
     settings = Settings()
     app = FastAPI(
-        title="Yandex DB",
+        title="FastReport API",
         description="Хранилище данных",
         docs_url="/swagger",
     )
     bind_events(app, settings.db_settings)
     bind_exceptions(app)
     app.include_router(imp_router, prefix="")
-    # app.include_router(tg_router, prefix="")
+    app.include_router(ds_router, prefix="")
+    app.include_router(api_keys_router, prefix="")
+    app.include_router(group_router, prefix="")
+    app.include_router(user_router, prefix="")
 
     # add_pagination(app)
     return app

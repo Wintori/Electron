@@ -2,7 +2,7 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    db_name: str = "postres"
+    db_name: str = "PIDdatabase"
     db_user: str = "postres"
     db_password: str = "postres"
     db_host: str = "pg:5432"
@@ -19,5 +19,7 @@ class Settings(BaseSettings):
         return self
 
     def get_dsn_sync(self):
-        return f'postgresql+psycopg2://{self.db_name}:{self.db_password}' \
+        return f'postgresql+psycopg2://{self.db_user}:{self.db_password}' \
                f'@{self.db_url}:{self.db_port}/{self.db_name}'
+
+s = print(Settings().get_dsn_sync())

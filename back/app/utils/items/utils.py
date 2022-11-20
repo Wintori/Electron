@@ -35,21 +35,23 @@ async def get_or_404(session, model, param_id):
 
 async def select_all_fiels_id(session):
     query = select(Items).where(Items.type == SystemItemType.FILE)
-    result = (await session.execute(query)).scalars().all()
+    result = (await session.execute(query)).mappings().all()
     return list(map(lambda x: x.id, result))
 
 
-async def update_size_by_files_id(session, files_data: Set[Tuple[str, int]]) -> None:
+async def select_all_items_id_by_tag(session, tag):
+    query = select(Items).where(Items.tag == tag)
+    result = (await session.execute(query)).scalars().all()
+    return  result
+    # return result
 
+
+async def update_size_by_files_id(session, files_data: Set[Tuple[int, int]]) -> None:
     for file_data in files_data:
-        print("We are here ")
-        print(file_data)
         parent = await session.get(Items, file_data[0])
-        print(f"{parent.size}")
         add_size = parent.size - file_data[1]
-        print(f"we want to add {add_size=}")
         parent = parent.parent_id
         while parent:
             update_parent = update(Items).where(Items.id == parent).values(size=Items.size + add_size).returning(
                 literal_column("parent_id"))
-            parent = (await session.execute(update_parent)).scalars().first()
+            parent = (await session.execute(update_parent)).mappings().first()

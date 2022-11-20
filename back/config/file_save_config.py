@@ -1,1 +1,1 @@
-DEFOULT_PATH = "back/files/"
+DEFOULT_PATH = "data/files/"
