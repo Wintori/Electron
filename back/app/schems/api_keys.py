@@ -19,11 +19,11 @@ class CreateAPIKeyRequest(BaseModel):
     class Config:
         orm_mode = True
 
-#
-# class UpdateAPIKeyRequest(BaseModel):
-#     name: str | None
-#     type: str | None
-#     auth_string: str | None
-#
-#     class Config:
-#         orm_mode = True
+
+class UpdateAPIKeyRequest(BaseModel):
+    name: str | None
+    type: str | None
+    auth_string: str | None
+
+    class Config:
+        orm_mode = True

@@ -12,11 +12,16 @@ or
  
  `pip install -r req.txt`
  
+
 # Миграции отсуствуют временно
 (при 1 запуске база автоматически создает таблицы ) 
-
+# Запуск фронтенда 
+`npm iistall
+npm start`
 # Запуск сервера: 
 `python3 back/main.py`
 
 # Open API 3 :
 ```API_Doc.yaml```
+
+https://editor.swagger.io/

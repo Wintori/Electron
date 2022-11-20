@@ -24,12 +24,12 @@ class CreateUserRequest(BaseModel):
     class Config:
         orm_mode = True
 
-#
-# class UpdateUserRequest(BaseModel):
-#     full_name: str | None
-#     email: str | None
-#     phone: str | None
-#     group_id: int | None
-#
-#     class Config:
-#         orm_mode = True
+
+class UpdateUserRequest(BaseModel):
+    full_name: str | None
+    email: str | None
+    phone: str | None
+    group_id: int | None
+
+    class Config:
+        orm_mode = True

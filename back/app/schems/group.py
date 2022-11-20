@@ -24,10 +24,10 @@ class CreateGroupRequest(BaseModel):
     class Config:
         orm_mode = True
 #
-#
-# class UpdateGroupRequest(BaseModel):
-#     name: str | None
-#     description: str | None
-#
-#     class Config:
-#         orm_mode = True
+
+class UpdateGroupRequest(BaseModel):
+    name: str | None
+    description: str | None
+
+    class Config:
+        orm_mode = True
