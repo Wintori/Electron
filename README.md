@@ -7,6 +7,11 @@ or
 # Install requirement
 ```poetry install```
  if error `pip install poetry`
+ 
+ if have trubles with it:
+ 
+ `pip install -r req.txt`
+ 
 # Миграции отсуствуют временно
 (при 1 запуске база автоматически создает таблицы ) 
 
