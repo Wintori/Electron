@@ -1,7 +1,6 @@
 const template = document.querySelector(".data-template").content
 
 function createCard (name, type, lastChange, status) {
-    console.log(template.querySelector(".information__data-source__item"))
     const post = template.querySelector(".information__data-source__item").cloneNode(true)
     const postName = post.querySelector(".information__data-source__item-name")
     const postType = post.querySelector(".information__data-source__item-type")
