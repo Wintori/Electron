@@ -35,6 +35,9 @@
 @import url(../blocks/information/__groups/__img/information__groups__img.css);
 @import url(../blocks/information/__groups/__item/information__groups__item.css);
 @import url(../blocks/information/__groups/__text/information__groups__text.css);
+@import url(../blocks/information/__api/information__api.css);
+@import url(../blocks/information/__api/__item/information__api__item.css);
+@import url(../blocks/information/__api/__text/information__api__text.css);
 @import url(../blocks/information/__sort-menu/information__sort-menu.css);
 @import url(../blocks/information/__sort-menu/__item/information__sort-menu__item.css);
 @import url(../blocks/information/__sort-menu/__item/_size/information__sort-menu__item_size.css);
