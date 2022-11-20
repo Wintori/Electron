@@ -37,6 +37,13 @@ npm start`
 ## Open API 3 :
 ```API_Doc.yaml```
 
+# Что там с фронтом?
+<br/>
+* Методология БЭМ
+* Семантическая вёрстка
+* Работа на чисто JS
+* Адаптивная верстка (в разработке)
+
 ---
 
 Вы можете посмотреть как работает наш API онлайн, поместив файл [API_Doc.yaml](https://drive.google.com/file/d/1L81MZfjckXV2efivKMs1ECeg86aN0htw/view?usp=share_link) на сайт [Swagger](https://editor.swagger.io/).
