@@ -3,6 +3,9 @@
 # Ссылка на сборку 
   https://clck.ru/32jBWR
 
+# Figma проекта
+  https://www.figma.com/team_invite/redeem/19ot6Z0GfkQdg5mF8Zdxbx
+
 ## Create database:
 ```docker run  --name PID-database -e POSTGRES_USER=postres -e POSTGRES_DB=PIDdatabase -e POSTGRES_PASSWORD=postres -e PGDATA=/var/lib/postgresql/data/pgdata -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres```
 or  
