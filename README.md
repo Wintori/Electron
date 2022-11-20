@@ -10,6 +10,8 @@
 # Figma проекта
 [Figma](https://www.figma.com/file/JmZPCh45jgzhmI2qvYzoFY/Untitled?t=jNm6G5Kg8qUzZGis-1)
   
+# Фотографии проекта
+![Photo](https://ibb.co/jf182SS)
   
 # Установка при запуске через клонирование
 
