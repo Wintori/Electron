@@ -1,5 +1,8 @@
 # Fast Reports
 
+![FastReports](https://www.softmagazin.ru/upload/iblock/d44/d44273acbee5401798ac42191653b515.png)
+
+
 # Ссылка на сборку 
   https://clck.ru/32jBWR
 
