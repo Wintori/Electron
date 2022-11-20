@@ -1,7 +1,6 @@
 const template = document.querySelector(".data-template").content
 
 function createCard (name, type, lastChange, status) {
-    console.log(template)
     console.log(template.querySelector(".information__data-source__item"))
     const post = template.querySelector(".information__data-source__item").cloneNode(true)
     const postName = post.querySelector(".information__data-source__item-name")
@@ -17,5 +16,11 @@ function createCard (name, type, lastChange, status) {
     return post
 }
 
-const example = createCard("Todos", "JSON", "18.11.22", "подключено")
+const example = createCard("Todos", "JSON", "18.11.2022", "подключено")
 document.querySelector(".information__data-source").append(example)
+const example1 = createCard("FFFFFFFFF", "TEST", "10.11.2022", "подключено")
+document.querySelector(".information__data-source").append(example1)
+const example2 = createCard("TEST", "LOREMIPSUM", "01.01.2022", "подключено")
+document.querySelector(".information__data-source").append(example2)
+const example3 = createCard("UNO", "DOS", "18.11.2022", "подключено")
+document.querySelector(".information__data-source").append(example3)
