@@ -87,7 +87,7 @@
                 <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
               </svg>
             </div>
-      </li>
+          </li>
         </ul>
         <ul class="information__documents">
           <li class="information__documents__item">
@@ -105,6 +105,30 @@
             </p>
           </li>
         </ul>
+
+        <div class="popup" id="popup">
+          <img src="images/add.svg" class="popup__img" onclick="myFunction()">
+          <div id="myPopup" class="popup__content">
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Создать&nbsp;папку
+              </p>
+              <img src="images/api.svg">
+            </div>
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Создать&nbsp;шаблон
+              </p>
+              <img src="images/api.svg">
+            </div>
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Добавить&nbsp;шаблон
+              </p>
+              <img src="images/api.svg">
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -130,5 +154,8 @@
       </p>
     </li>
   </template>
+  <script src="./popups.js">
+
+  </script>
   </body>
 </html>

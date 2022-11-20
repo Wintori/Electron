@@ -77,6 +77,23 @@
         </ul>
         <ul class="information__data-source">
         </ul>
+        <div class="popup" id="popup">
+          <img src="images/add.svg" class="popup__img" onclick="myFunction()">
+          <div id="myPopup" class="popup__content">
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Создать&nbsp;БД
+              </p>
+              <img src="images/api.svg">
+            </div>
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Удалить&nbsp;БД
+              </p>
+              <img src="images/api.svg">
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -105,5 +122,6 @@
     </li>
   </template>
   <script src="dataSources.js"></script>
+  <script src="./popups.js"></script>
   </body>
 </html>
