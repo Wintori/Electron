@@ -7,9 +7,11 @@ or
 # Install requirement
 ```poetry install```
  if error `pip install poetry`
-
-if promlem with it:
-`pip install -r req.txt`
+ 
+ if have trubles with it:
+ 
+ `pip install -r req.txt`
+ 
 
 # Миграции отсуствуют временно
 (при 1 запуске база автоматически создает таблицы ) 
@@ -21,4 +23,5 @@ npm start`
 
 # Open API 3 :
 ```API_Doc.yaml```
+
 https://editor.swagger.io/
