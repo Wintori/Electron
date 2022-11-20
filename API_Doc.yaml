@@ -1,0 +1,1166 @@
+openapi: 3.0.2
+info:
+  title: Fast Report API
+  description: Хранилище данных
+  version: 0.1.0
+paths:
+  /fif/create_folder:
+    post:
+      tags:
+        - Work with files and folders
+      summary: Create Folder
+      operationId: create_folder_fif_create_folder_post
+      parameters:
+        - required: false
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/SystemItemTag'
+            default: Other
+          name: tag
+          in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FolderItemRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fif/create_file:
+    post:
+      tags:
+        - Work with files and folders
+      summary: Create File
+      operationId: create_file_fif_create_file_post
+      parameters:
+        - required: false
+          schema:
+            title: Parent Id
+            type: integer
+          name: parent_id
+          in: query
+        - required: false
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/SystemItemTag'
+            default: Other
+          name: tag
+          in: query
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_create_file_fif_create_file_post'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fif/create_file_by_path:
+    post:
+      tags:
+        - Work with files and folders
+      summary: Create File By Path
+      operationId: create_file_by_path_fif_create_file_by_path_post
+      parameters:
+        - required: false
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/SystemItemTag'
+            default: Other
+          name: tag
+          in: query
+        - required: false
+          schema:
+            title: File Url
+            type: string
+            default: data/files/
+          name: file_url
+          in: query
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_create_file_by_path_fif_create_file_by_path_post'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fif/delete/{id}:
+    delete:
+      tags:
+        - Work with files and folders
+      summary: Delete
+      operationId: delete_fif_delete__id__delete
+      parameters:
+        - required: true
+          schema:
+            title: Item Id
+            type: integer
+          name: item_id
+          in: query
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fif/delete_by_url:
+    delete:
+      tags:
+        - Work with files and folders
+      summary: Delete By Url
+      operationId: delete_by_url_fif_delete_by_url_delete
+      parameters:
+        - required: true
+          schema:
+            title: Url
+            type: string
+          name: url
+          in: query
+        - required: true
+          schema:
+            title: Date
+            type: string
+            format: date-time
+          name: date
+          in: query
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fif/get_by_tag:
+    get:
+      tags:
+        - Work with files and folders
+      summary: Get Files By Tag
+      operationId: get_files_by_tag_fif_get_by_tag_get
+      parameters:
+        - required: false
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/SystemItemTag'
+            default: Other
+          name: tag
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemTagResponseData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fif/get_by_tag_and_path:
+    get:
+      tags:
+        - Work with files and folders
+      summary: Get Files By Tag
+      operationId: get_files_by_tag_fif_get_by_tag_and_path_get
+      parameters:
+        - required: false
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/SystemItemTag'
+            default: Other
+          name: tag
+          in: query
+        - required: false
+          schema:
+            title: File Url
+            type: string
+            default: data/files/
+          name: file_url
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemTagResponseData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fif/nodes/{id}:
+    get:
+      tags:
+        - Work with files and folders
+      summary: Get Files
+      operationId: get_files_fif_nodes__id__get
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemResponseData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/create_data_source:
+    post:
+      tags:
+        - Data sources CRUD + List
+      summary: Create
+      operationId: create_ds_create_data_source_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDataSourcesRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSourcesResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/get_data_source/{id}:
+    get:
+      tags:
+        - Data sources CRUD + List
+      summary: Get Data
+      operationId: get_data_ds_get_data_source__id__get
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSourcesResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/get_data_source:
+    get:
+      tags:
+        - Data sources CRUD + List
+      summary: Get List
+      operationId: get_list_ds_get_data_source_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get List Ds Get Data Source Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataSourcesResponse'
+  /ds/update_data_source/{id}:
+    patch:
+      tags:
+        - Data sources CRUD + List
+      summary: Update Data Sources
+      operationId: update_data_sources_ds_update_data_source__id__patch
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDataSourcesRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSourcesResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/delete_data_source/{id}:
+    delete:
+      tags:
+        - Data sources CRUD + List
+      summary: Delete Data Sources
+      operationId: delete_data_sources_ds_delete_data_source__id__delete
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api_keys/create_api_keys:
+    post:
+      tags:
+        - API keys CRUD + List
+      summary: Create
+      operationId: create_api_keys_create_api_keys_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAPIKeyRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api_keys/get_api_keys/{id}:
+    get:
+      tags:
+        - API keys CRUD + List
+      summary: Get Data
+      operationId: get_data_api_keys_get_api_keys__id__get
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api_keys/get_api_keys:
+    get:
+      tags:
+        - API keys CRUD + List
+      summary: Get List
+      operationId: get_list_api_keys_get_api_keys_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get List Api Keys Get Api Keys Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/APIKeyResponse'
+  /api_keys/update_api_keys/{id}:
+    patch:
+      tags:
+        - API keys CRUD + List
+      summary: Update Api Keys
+      operationId: update_api_keys_api_keys_update_api_keys__id__patch
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAPIKeyRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeyResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api_keys/delete_api_keys/{id}:
+    delete:
+      tags:
+        - API keys CRUD + List
+      summary: Delete Api Keys
+      operationId: delete_api_keys_api_keys_delete_api_keys__id__delete
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /group/create_group:
+    post:
+      tags:
+        - Group CRUD + List
+      summary: Create Folder
+      operationId: create_folder_group_create_group_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGroupRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /group/get_group/{id}:
+    get:
+      tags:
+        - Group CRUD + List
+      summary: Get Data
+      operationId: get_data_group_get_group__id__get
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /group/get_group:
+    get:
+      tags:
+        - Group CRUD + List
+      summary: Get List
+      operationId: get_list_group_get_group_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get List Group Get Group Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/GroupData'
+  /group/update_group/{id}:
+    patch:
+      tags:
+        - Group CRUD + List
+      summary: Update Group
+      operationId: update_group_group_update_group__id__patch
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateGroupRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupData'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /group/delete_group/{id}:
+    delete:
+      tags:
+        - Group CRUD + List
+      summary: Delete Group
+      operationId: delete_group_group_delete_group__id__delete
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/create_user:
+    post:
+      tags:
+        - User CRUD + List
+      summary: Create User
+      operationId: create_user_ds_create_user_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/get_user/{id}:
+    get:
+      tags:
+        - User CRUD + List
+      summary: Get Data
+      operationId: get_data_ds_get_user__id__get
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/get_api_keys:
+    get:
+      tags:
+        - User CRUD + List
+      summary: Get List
+      operationId: get_list_ds_get_api_keys_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get List Ds Get Api Keys Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserResponse'
+  /ds/update_api_keys/{id}:
+    patch:
+      tags:
+        - User CRUD + List
+      summary: Update User
+      operationId: update_user_ds_update_api_keys__id__patch
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ds/delete_api_keys/{id}:
+    delete:
+      tags:
+        - User CRUD + List
+      summary: Delete User
+      operationId: delete_user_ds_delete_api_keys__id__delete
+      parameters:
+        - required: true
+          schema:
+            title: Id
+            type: integer
+          name: id
+          in: path
+      responses:
+        '204':
+          description: Successful Response
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    APIKeyResponse:
+      title: APIKeyResponse
+      required:
+        - id
+        - name
+        - type
+        - auth_string
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        type:
+          title: Type
+          type: string
+        auth_string:
+          title: Auth String
+          type: string
+    Body_create_file_by_path_fif_create_file_by_path_post:
+      title: Body_create_file_by_path_fif_create_file_by_path_post
+      required:
+        - file
+      type: object
+      properties:
+        file:
+          title: File
+          type: string
+          format: binary
+    Body_create_file_fif_create_file_post:
+      title: Body_create_file_fif_create_file_post
+      required:
+        - file
+      type: object
+      properties:
+        file:
+          title: File
+          type: string
+          format: binary
+    CreateAPIKeyRequest:
+      title: CreateAPIKeyRequest
+      required:
+        - name
+        - type
+        - auth_string
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        type:
+          title: Type
+          type: string
+        auth_string:
+          title: Auth String
+          type: string
+    CreateDataSourcesRequest:
+      title: CreateDataSourcesRequest
+      required:
+        - name
+        - type
+        - status
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        type:
+          title: Type
+          type: string
+        status:
+          $ref: '#/components/schemas/DataSourcesStatus'
+    CreateGroupRequest:
+      title: CreateGroupRequest
+      required:
+        - name
+        - description
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          type: string
+    CreateUserRequest:
+      title: CreateUserRequest
+      required:
+        - full_name
+        - email
+        - phone
+        - group_id
+      type: object
+      properties:
+        full_name:
+          title: Full Name
+          type: string
+        email:
+          title: Email
+          type: string
+        phone:
+          title: Phone
+          type: string
+        group_id:
+          title: Group Id
+          type: integer
+    DataSourcesResponse:
+      title: DataSourcesResponse
+      required:
+        - id
+        - name
+        - type
+        - status
+        - date
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        type:
+          title: Type
+          type: string
+        status:
+          $ref: '#/components/schemas/DataSourcesStatus'
+        date:
+          title: Date
+          type: string
+          format: date-time
+    DataSourcesStatus:
+      title: DataSourcesStatus
+      enum:
+        - Connected
+        - Starting
+        - Stopped
+        - Error
+      type: string
+      description: An enumeration.
+    FolderItemRequest:
+      title: FolderItemRequest
+      required:
+        - name
+      type: object
+      properties:
+        parent_id:
+          title: Parent Id
+          type: integer
+        name:
+          title: Name
+          type: string
+    GroupData:
+      title: GroupData
+      required:
+        - id
+        - name
+        - description
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          type: string
+    GroupResponse:
+      title: GroupResponse
+      required:
+        - id
+        - name
+        - description
+        - users
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          type: string
+        users:
+          title: Users
+          type: array
+          items:
+            $ref: '#/components/schemas/UserData'
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ItemData:
+      title: ItemData
+      required:
+        - id
+        - date
+        - size
+        - url
+        - name
+        - tag
+        - type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        date:
+          title: Date
+          type: string
+          format: date-time
+        parent_id:
+          title: Parent Id
+          type: integer
+        size:
+          title: Size
+          type: integer
+        url:
+          title: Url
+          type: string
+        name:
+          title: Name
+          type: string
+        tag:
+          $ref: '#/components/schemas/SystemItemTag'
+        type:
+          $ref: '#/components/schemas/SystemItemType'
+    ItemResponseData:
+      title: ItemResponseData
+      required:
+        - id
+        - date
+        - size
+        - url
+        - name
+        - tag
+        - type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        date:
+          title: Date
+          type: string
+          format: date-time
+        parent_id:
+          title: Parent Id
+          type: integer
+        size:
+          title: Size
+          type: integer
+        url:
+          title: Url
+          type: string
+        name:
+          title: Name
+          type: string
+        tag:
+          $ref: '#/components/schemas/SystemItemTag'
+        type:
+          $ref: '#/components/schemas/SystemItemType'
+        children:
+          title: Children
+          type: array
+          items: {}
+          default: []
+    ItemTagResponseData:
+      title: ItemTagResponseData
+      required:
+        - items
+      type: object
+      properties:
+        items:
+          title: Items
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemData'
+    SystemItemTag:
+      title: SystemItemTag
+      enum:
+        - Document
+        - Template
+        - Report
+        - Export
+        - Other
+      type: string
+      description: An enumeration.
+    SystemItemType:
+      title: SystemItemType
+      enum:
+        - FILE
+        - FOLDER
+      type: string
+      description: An enumeration.
+    UpdateAPIKeyRequest:
+      title: UpdateAPIKeyRequest
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        type:
+          title: Type
+          type: string
+        auth_string:
+          title: Auth String
+          type: string
+    UpdateDataSourcesRequest:
+      title: UpdateDataSourcesRequest
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        type:
+          title: Type
+          type: string
+        status:
+          $ref: '#/components/schemas/DataSourcesStatus'
+        date:
+          title: Date
+          type: string
+          format: date-time
+    UpdateGroupRequest:
+      title: UpdateGroupRequest
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        description:
+          title: Description
+          type: string
+    UpdateUserRequest:
+      title: UpdateUserRequest
+      type: object
+      properties:
+        full_name:
+          title: Full Name
+          type: string
+        email:
+          title: Email
+          type: string
+        phone:
+          title: Phone
+          type: string
+        group_id:
+          title: Group Id
+          type: integer
+    UserData:
+      title: UserData
+      required:
+        - id
+        - full_name
+        - email
+        - phone
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        full_name:
+          title: Full Name
+          type: string
+        email:
+          title: Email
+          type: string
+        phone:
+          title: Phone
+          type: string
+    UserResponse:
+      title: UserResponse
+      required:
+        - id
+        - full_name
+        - email
+        - phone
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        full_name:
+          title: Full Name
+          type: string
+        email:
+          title: Email
+          type: string
+        phone:
+          title: Phone
+          type: string
+    ValidationError:
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
