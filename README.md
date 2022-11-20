@@ -44,6 +44,6 @@ npm start`
 ---
 # Команда разработчиков
 
-Перевощиков Андрей / Backend разработчик
-Шашурин Егор / Frontend разработчик
-Плехов Андрей / Frontend разработчик
+####Перевощиков Андрей / Backend разработчик [GitHub](https://github.com/andreyvaran)
+####Шашурин Егор / Frontend разработчик [GitHub](https://github.com/Wintori)
+####Плехов Андрей / Frontend разработчик [GitHub](https://github.com/fundxx)
