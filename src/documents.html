@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Быстрые отчёты</title>
+    <link rel="stylesheet" href="pages/index.css" />
+  </head>
+  <body>
+  <div class="page">
+    <header class="header">
+      <div class="header__logo-container">
+        <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+        <h1 class="header__title">Быстрые<br>отчёты</h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li>
+            <a class="header__nav-link"  href="./documents.html">
+            <img src="images/doc-icon_active.svg" alt="Документы" class="header__nav-icon">
+            <p class="header__nav-text header__nav-text_active">Документы</p>
+            </a>
+          </li>
+          <li>
+            <a class="header__nav-link" href="./dataSources.html">
+            <img src="images/data-icon.svg" alt="Источники данных" class="header__nav-icon">
+            <p class="header__nav-text">Источники данных</p>
+            </a>
+          </li>
+          <li>
+            <a class="header__nav-link" href="./users.html">
+              <img class="header__nav-icon" src="images/group-icon.svg" alt="Группы" >
+              <p class="header__nav-text">Группы</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <img class="header__account" src="images/account.svg" alt="Аккаунт">
+    </header>
+
+    <main class="content">
+      <aside class="aside-menu">
+        <ul class="aside-menu__list">
+          <li class="aside-menu__item aside-menu__item_active" id="template">
+            <img class="aside-menu__img aside-menu__img_active" src="./images/template.svg">
+            <p class="aside-menu__text aside-menu__text_active">
+              Шаблоны
+            </p>
+          </li>
+          <li class="aside-menu__item" id="report">
+            <img class="aside-menu__img" src="./images/report.svg">
+            <p class="aside-menu__text">
+              Отчеты
+            </p>
+          </li>
+          <li class="aside-menu__item" id="export">
+            <img class="aside-menu__img" src="./images/export.svg">
+            <p class="aside-menu__text">
+              Экспорты
+            </p>
+          </li>
+        </ul>
+      </aside>
+      <section class="information">
+        <ul class="information__sort-menu">
+          <li class="information__sort-menu__item">
+            <p class="information__text">Название</p>
+            <svg viewBox="0 0 10 10" class="information__icon"><path d="m2.8027 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              <path d="m1.8008 3.9395a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1h-6.3984z"></path>
+              <path d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+            </svg>
+          </li>
+          <li class="information__sort-menu__item">
+            <div class="information__sort-menu__item information__sort-menu__item_size">
+              <p class="information__text">Размер</p>
+              <svg viewBox="0 0 10 10" class="information__icon">
+                <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              </svg>
+            </div>
+
+            <div class="information__sort-menu__item information__sort-menu__item_last-change">
+              <p class="information__text">Последнее изменение</p>
+              <svg viewBox="0 0 10 10" class="information__icon">
+                <path fill="grey" d="m2.8027 3.939a1 1 0 0 0-1 1 1 1 0 0 0 1 1h4.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1.8008 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1h6.3984a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+                <path fill="grey" d="m1 8a1 1 0 0 0-1 1 1 1 0 0 0 1 1h8a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"></path>
+              </svg>
+            </div>
+          </li>
+        </ul>
+        <ul class="information__documents">
+
+        </ul>
+
+        <div class="popup" id="popup">
+          <img src="images/add.svg" class="popup__img" onclick="myFunction()">
+          <div id="myPopup" class="popup__content">
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Создать&nbsp;папку
+              </p>
+              <img src="images/api.svg">
+            </div>
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Создать&nbsp;шаблон
+              </p>
+              <img src="images/api.svg">
+            </div>
+            <div class="popup__item" href="#">
+              <p class="popup__text">
+                Добавить&nbsp;шаблон
+              </p>
+              <img src="images/api.svg">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+
+
+
+    </footer>
+  </div>
+
+
+  <template class="card-template">
+    <li class="information__documents__item">
+      <img src="" alt="" class="information__documents__img">
+      <p class="information__documents__text information__documents__name">
+        MSSQL
+      </p>
+      <p class="information__documents__text information__documents__size">
+        25205
+      </p>
+      <p class="information__documents__text information__documents__date">
+        19.1.2022
+      </p>
+    </li>
+  </template>
+
+  <script src="./popups.js"></script>
+  <script src="documents.js"></script>
+  </body>
+</html>

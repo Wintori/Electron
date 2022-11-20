@@ -1,0 +1,7 @@
+.aside-menu{
+    display: flex;
+    height: calc(100vh - 150px);
+    align-items: center;
+    border-right: 2px solid black;
+    min-width: 200px;
+}

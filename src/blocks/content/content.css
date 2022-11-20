@@ -1,0 +1,11 @@
+.content {
+    display: flex;
+    padding: 0;
+    margin: 0 15px;
+}
+
+@media screen and (max-width: 320px) {
+    .content {
+        /*max-width: 320px;*/
+    }
+}
