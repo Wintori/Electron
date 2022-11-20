@@ -4,10 +4,12 @@
 
 
 # Ссылка на сборку 
-  https://clck.ru/32jBWR
+[Google Drive](https://clck.ru/32jBWR)
+  
 
 # Figma проекта
-  https://www.figma.com/file/JmZPCh45jgzhmI2qvYzoFY/Untitled?t=jNm6G5Kg8qUzZGis-1
+[Figma](https://www.figma.com/file/JmZPCh45jgzhmI2qvYzoFY/Untitled?t=jNm6G5Kg8qUzZGis-1)
+  
   
 # Установка при запуске через клонирование
 
