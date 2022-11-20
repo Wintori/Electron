@@ -39,7 +39,7 @@ npm start`
 
 ---
 
-Вы можете посмотреть как работает наш API онлайн, поместив файл API_Doc.yaml на сайт [Swagger](https://editor.swagger.io/).
+Вы можете посмотреть как работает наш API онлайн, поместив файл [API_Doc.yaml](https://drive.google.com/file/d/1L81MZfjckXV2efivKMs1ECeg86aN0htw/view?usp=share_link) на сайт [Swagger](https://editor.swagger.io/).
 
 ---
 # Команда разработчиков
