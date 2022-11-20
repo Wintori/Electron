@@ -30,6 +30,10 @@
 @import url(../blocks/information/__documents/__img/information__documents__img.css);
 @import url(../blocks/information/__documents/__name/information__documents__name.css);
 @import url(../blocks/information/__documents/__size/information__documents__size.css);
+@import url(../blocks/information/__groups/information__groups.css);
+@import url(../blocks/information/__groups/__img/information__groups__img.css);
+@import url(../blocks/information/__groups/__item/information__groups__item.css);
+@import url(../blocks/information/__groups/__text/information__groups__text.css);
 @import url(../blocks/information/__sort-menu/information__sort-menu.css);
 @import url(../blocks/information/__sort-menu/__item/information__sort-menu__item.css);
 @import url(../blocks/information/__sort-menu/__item/_size/information__sort-menu__item_size.css);
@@ -43,4 +47,10 @@
 @import url(../blocks/information/__data-source/__item-change/information__data-source__item-change.css);
 @import url(../blocks/information/__data-source/__item-status/information__data-source__item-status.css);
 @import url(../blocks/information/__data-source/__text/information__data-source__text.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__content/popup__content.css);
+@import url(../blocks/popup/__item/popup__item.css);
+@import url(../blocks/popup/__text/popup__text.css);
+@import url(../blocks/popup/__content/_show/popup__content_show.css);
 @import url(../blocks/footer/footer.css);
